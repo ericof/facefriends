@@ -1,0 +1,108 @@
+body {
+	background: none repeat scroll 0 0 #FFFFFF;
+	color: #333333;
+	direction: ltr;
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+	font-size: 11px;
+	text-align: left;
+}
+
+#visual-wrapper { padding-bottom: 20px; }
+
+#column-left {
+	border-right:1px solid #B3B3B3;
+	float: left;
+	min-height: 300px;
+	padding: 20px 0 0 5px;
+	width: 179px;
+	word-wrap: break-word;
+}
+
+#column-left ul {
+	padding-left: 0;
+}
+
+#column-left li {
+	border-bottom:1px solid #B3B3B3;
+	list-style:none;
+}
+
+#column-left li a, #column-left li a:visited, #column-left li a:hover {
+	color: #3B5998;
+	text-decoration: none;
+}
+#column-left li a:hover {
+	background: #EDEFF4;
+}
+
+#content { float: left; padding: 0 0 0 20px; }
+
+ul.tabs {
+	border-bottom: 1px solid #999999;
+	border-left: 1px solid #999999;
+	float: left;
+	height: 32px;
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+ul.tabs li {
+	background: none repeat scroll 0 0 #E0E0E0;
+	border-color: #999999 #999999 #999999 -moz-use-text-color;
+	border-style: solid solid solid none;
+	border-width: 1px 1px 1px medium;
+	float: left;
+	height: 31px;
+	line-height: 31px;
+	margin: 0 0 -1px;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+}
+
+ul.tabs li a {
+	border: 1px solid #FFFFFF;
+	color: #000000;
+	display: block;
+	font-size: 1.2em;
+	outline: medium none;
+	padding: 0 20px;
+	text-decoration: none;
+}
+
+ul.tabs li a:hover { background: none repeat scroll 0 0 #CCCCCC; }
+
+html ul.tabs li.active, html ul.tabs li.active a:hover {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+.tab_container {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border-color: -moz-use-text-color #999999 #999999;
+	border-right: 1px solid #999999;
+	border-style: none solid solid;
+	border-width: medium 1px 1px;
+	clear: both;
+	float: left;
+	overflow: hidden;
+	width: 100%;
+}
+
+.tab_content { font-size: 1.2em; padding: 20px; width: 300px; }
+
+#userBox { 
+	vertical-align: top;
+	color:#3B5998;
+	font-weight:bold;
+}
+
+#userPhoto {
+	border: 0 none;
+	margin-left: auto;
+	margin-right: 5px;
+	vertical-align: top;
+}
+

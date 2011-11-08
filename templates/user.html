@@ -1,0 +1,36 @@
+    {% if user %}
+      <p>Nome: {{ user.name|escape }}</p>
+      <p>
+          <a href="/reports/user?uid={{ user.id }}">
+          <img src="http://graph.facebook.com/{{ user.id }}/picture?type=square"/>
+          </a>
+      </p>
+      <div>
+          Friends:<br/>
+      {% for friend in friends %}
+        <a href="/reports/user?uid={{ friend.id }}"
+           title="{{ friend.name }}"
+           class="{{ friend.accessed }}">
+            {% if not friend.accessed %}
+            <img alt="{{ friend.name }}"
+                border=2
+                bordercolor="blue"
+                width="50px"
+                height="50px"
+                src="http://graph.facebook.com/{{ friend.id }}/picture?type=square"/>
+            {% else %}
+            <img alt="{{ friend.name }}"
+                border=2
+                bordercolor="red"
+                width="50px"
+                height="50px"
+                src="http://graph.facebook.com/{{ friend.id }}/picture?type=square"/>
+            {% endif%}
+        </a>
+      {% endfor %}
+      </div>
+    {% endif %}
+    
+    {% if not user%}
+        Erro
+    {% endif%}

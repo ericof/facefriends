@@ -1,0 +1,49 @@
+<h1>Mano's Explorer</h1>
+
+<ul class="tabs">
+{% if not current_user%}
+    <li><a href="#participe">Participe</a></li>
+{% endif%}
+{% if current_user%}
+    <li><a href="#agradecimento">Agradecimento</a></li>
+{% endif%}
+    <li><a href="#sobre">Saiba mais</a></li>
+</ul>
+
+<div class="tab_container">
+{% if not current_user%}
+    <div id="participe" class="tab_content">
+        Para participar da pesquisa do Mano&#x27;s Explorer &eacute; necess&aacute;rio clicar no 
+        bot&atilde;o abaixo e, no popup que ser&aacute; aberto, confirmar ao Facebook que 
+        voc&ecirc; aceita inscrever-se nesta aplica&ccedil;&atilde;o.
+        <br/><br/>
+        <fb:login-button perms="user_about_me,user_birthday,user_location,user_religion_politics,user_website,user_work_history,read_friendlists,user_hometown,user_groups,offline_access"></fb:login-button>
+    </div>
+{% endif%}
+{% if current_user %}
+    <div id="agradecimento" class="tab_content">
+        Obrigado pela participa&ccedil;&atilde;o.<br/><br/>
+    </div>
+{% endif %}
+    <div id="sobre" class="tab_content">
+        Esta aplica&ccedil;&atilde;o &eacute; parte do processo de levantamento de dados para a 
+        apresenta&ccedil;&atilde;o de &Eacute;rico Andrei durante a PythonBrasil[6]
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    $(".tab_content").hide(); //Hide all content
+    $("ul.tabs li:first").addClass("active").show(); //Activate first tab
+    $(".tab_content:first").show(); //Show first tab content
+    $("ul.tabs li").click(function() {
+        $("ul.tabs li").removeClass("active"); //Remove any "active" class
+        $(this).addClass("active"); //Add "active" class to selected tab
+        $(".tab_content").hide(); //Hide all tab content
+        var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+        $(activeTab).fadeIn(); //Fade in the active ID content
+        return false;
+    });
+});
+</script>
+

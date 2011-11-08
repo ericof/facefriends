@@ -1,0 +1,34 @@
+application: manosexplorer
+version: 100-04
+runtime: python
+api_version: 1
+
+handlers:
+- url: /static
+  static_dir: static
+
+- url: /queue/.*
+  script: queue.py
+  login: admin
+  
+- url: /admin/fql/?.*
+  script: admin/fql_explorer.py
+  login: admin
+
+- url: /admin/process/?.*
+  script: admin/process.py
+  login: admin
+
+- url: /reports/.*
+  script: reports/manage.py
+  login: admin
+
+- url: /myFriends.json
+  script: reports/friends.py
+ 
+- url: /.*
+  script: base.py
+
+builtins:
+- datastore_admin: on
+- remote_api: on

@@ -1,0 +1,6 @@
+indexes:
+- kind: FBUser
+  properties:
+  - name: friends
+  - name: name
+  - name: id

@@ -1,0 +1,12 @@
+queue:
+- name: default
+  rate: 6/m
+  bucket_size: 20
+  
+- name: friendsUp
+  rate: 10/s
+  bucket_size: 20
+
+- name: friendsFriendsUp
+  rate: 20/m
+  bucket_size: 20
